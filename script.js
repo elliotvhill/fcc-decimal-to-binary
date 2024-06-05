@@ -4,6 +4,15 @@ const result = document.getElementById("result")
 
 const checkUserInput = () => {
     console.log(numberInput.value)
+    if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberInput.value) < 0) {
+        alert("Please provide a decimal number greater than or equal to 0")
+        return
+    }
 }
 
 convertBtn.addEventListener("click", checkUserInput)
+numberInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        checkUserInput()
+    }
+})
