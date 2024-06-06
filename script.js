@@ -33,3 +33,14 @@ numberInput.addEventListener('keydown', (e) => {
         checkUserInput();
     }
 });
+
+// recursion example
+const countdown = (number) => {
+    console.log(number)
+    if (number === 0) { // base case
+        return
+    } else {
+        countdown(number - 1)
+    }
+}
+countdown(3)
