@@ -13,10 +13,8 @@ const decimalToBinary = (input) => {
     // }
     // result.innerText = binary;
 
-    if (input === 0) { // base case
-        return "0"
-    } else if (input === 1) {
-        return "1"
+    if (input === 0 || input === 1) { // base case
+        return String(input)
     } else { // recursive case
         return decimalToBinary(Math.floor(input / 2)) + (input % 2)
     }
