@@ -15,6 +15,8 @@ const decimalToBinary = (input) => {
 
     if (input === 0) { // base case
         return "0"
+    } else if (input === 1) {
+        return "1"
     } else { // recursive case
         return decimalToBinary(Math.floor(input / 2)) + (input % 2)
     }
