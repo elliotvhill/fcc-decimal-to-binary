@@ -13,12 +13,16 @@ const decimalToBinary = (input) => {
     // }
     // result.innerText = binary;
 
-    if (input === 0 || input === 1) { // base case
-        return String(input)
-    } else { // recursive case
-        return decimalToBinary(Math.floor(input / 2)) + (input % 2)
+    if (input === 0 || input === 1) {
+        // base case
+        return String(input);
+    } else {
+        // recursive case
+        return decimalToBinary(Math.floor(input / 2)) + (input % 2);
     }
 };
+
+const showAnimation = () => {}
 
 const checkUserInput = () => {
     if (
@@ -29,6 +33,13 @@ const checkUserInput = () => {
         alert('Please provide a decimal number greater than or equal to 0');
         return;
     }
+
+    // animation trigger
+    if (parseInt(numberInput.value) === 5) {
+        showAnimation()
+        return
+    }
+    
     result.textContent = decimalToBinary(parseInt(numberInput.value));
     numberInput.value = '';
 };
@@ -40,15 +51,3 @@ numberInput.addEventListener('keydown', (e) => {
     }
 });
 
-// recursion example
-// const countDownAndUp = (number) => {
-//     console.log(number)
-//     if (number === 0) { // base case
-//         console.log("Reached base case")
-//         return
-//     } else { // recursive case
-//         countDownAndUp(number - 1)
-//         console.log(number)
-//     }
-// }
-// countDownAndUp(3)
