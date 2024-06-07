@@ -49,6 +49,9 @@ const showAnimation = () => {
                 </p>
             `;
         }, obj.addElDelay);
+        setTimeout(() => {
+            document.getElementById(obj.inputVal).textContent = obj.msg;
+        }, obj.showMsgDelay);
     });
 };
 
